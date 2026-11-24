@@ -81,12 +81,14 @@ nav.on{background:rgba(5,8,6,.82);backdrop-filter:blur(14px);border-color:var(--
 .work{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
 .ph2{position:relative;aspect-ratio:3/4;background:#0a110d;overflow:hidden}
 .ph2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .7s ease,transform 6s ease}
-.ph2 img.ap{opacity:0}.work.after .ph2 img.ap{opacity:1}.work.after .ph2 img.av{opacity:0}
-.work:hover .ph2 img{transform:scale(1.04)}
+.ph2 img.ap{clip-path:inset(0 0 0 var(--p,50%))}
+.work:hover .ph2 img{transform:scale(1.03)}
 .ph2::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,rgba(5,8,6,.85));pointer-events:none}
-.seg{position:absolute;top:14px;left:14px;z-index:2;display:flex;padding:4px;border-radius:999px;background:rgba(5,8,6,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08)}
-.seg button{border:0;background:transparent;color:var(--mute);font:700 14px Manrope,sans-serif;padding:0 16px;min-height:38px;border-radius:999px;cursor:pointer;transition:background .3s,color .3s}
-.seg button[aria-pressed=true]{background:var(--g);color:#03140a}
+.ph2 .bar{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;margin-left:-1px;background:var(--g);box-shadow:0 0 16px var(--g);pointer-events:none;z-index:2}
+.ph2 .knob{position:absolute;top:50%;left:var(--p,50%);width:50px;height:50px;margin:-25px 0 0 -25px;border-radius:50%;background:var(--g);display:grid;place-items:center;color:#03140a;font-weight:800;box-shadow:0 0 28px rgba(53,240,126,.6);pointer-events:none;z-index:2}
+.ph2 input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3;touch-action:pan-y}
+.ph2 input:focus-visible~.knob{outline:3px solid #fff;outline-offset:3px}
+.tg{position:absolute;top:14px;z-index:2;padding:6px 14px;border-radius:999px;background:rgba(5,8,6,.72);backdrop-filter:blur(8px);font-weight:700;font-size:14px;pointer-events:none}
 .wcap{position:absolute;left:18px;right:18px;bottom:16px;z-index:2}
 .wcap h3{font-size:20px}.wcap p{color:var(--mute);font-size:14px;margin-top:4px}
 .note{font-size:13px;color:var(--mute);margin-top:12px}
@@ -209,7 +211,7 @@ footer a{color:var(--mute)}
   <div class="wrap">
     <div class="kick rv">Réalisations</div>
     <h2 class="rv">Avant, après. Les chantiers parlent.</h2>
-    <p class="lead rv">Des chantiers réalisés par KLB Paysage. Touchez « Avant » ou « Après » pour comparer.</p>
+    <p class="lead rv">Des chantiers réalisés par KLB Paysage. Faites glisser le curseur pour comparer.</p>
     <div class="works" id="works"></div>
   </div>
 </section>
@@ -348,10 +350,10 @@ requestAnimationFrame(frame);
 
 /* réalisations */
 const WK=[['pelouse','Tonte et désherbage','Pelouse envahie, remise au propre'],['talus','Débroussaillage de talus','Talus dégagé jusqu’à la terre'],['haie','Taille de haie','Laurier taillé net, au carré']];
-$('#works').innerHTML=WK.map(([k,t,d])=>`<article class="work rv" data-k="${k}"><div class="ph2"><img class="av" src="images/${k}-avant.webp" alt="${t}, avant intervention" loading="lazy" width="900" height="1200"><img class="ap" src="images/${k}-apres.webp" alt="${t}, après intervention par KLB Paysage" loading="lazy" width="900" height="1200"><div class="seg" role="group" aria-label="Comparer"><button type="button" aria-pressed="true" data-v="0">Avant</button><button type="button" aria-pressed="false" data-v="1">Après</button></div><div class="wcap"><h3>${t}</h3><p>${d}</p></div></div></article>`).join('');
-const setW=(w,v)=>{w.classList.toggle('after',!!v);w.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.v===v)))};
-document.querySelectorAll('.work').forEach(w=>{w.querySelector('.seg').addEventListener('click',e=>{const b=e.target.closest('button');if(b){w.dataset.touched=1;setW(w,+b.dataset.v)}})});
-const wio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const w=e.target;wio.unobserve(w);if(!RM)setTimeout(()=>{if(!w.dataset.touched)setW(w,1)},1200+[...w.parentNode.children].indexOf(w)*350)}}),{threshold:.6});
+$('#works').innerHTML=WK.map(([k,t,d])=>`<article class="work rv"><div class="ph2" style="--p:50%"><img class="av" src="images/${k}-avant.webp" alt="${t}, avant intervention" loading="lazy" width="900" height="1200"><img class="ap" src="images/${k}-apres.webp" alt="${t}, après intervention par KLB Paysage" loading="lazy" width="900" height="1200"><span class="tg" style="left:14px">Avant</span><span class="tg" style="right:14px;color:var(--g)">Après</span><input type="range" min="0" max="100" value="50" aria-label="${t} : faire glisser pour comparer avant et après"><div class="bar"></div><div class="knob" aria-hidden="true">⟷</div><div class="wcap"><h3>${t}</h3><p>${d}</p></div></div></article>`).join('');
+document.querySelectorAll('.work').forEach(w=>{const ph=w.querySelector('.ph2'),r=w.querySelector('input');r.addEventListener('input',()=>{w.dataset.touched=1;ph.style.setProperty('--p',r.value+'%')})});
+const sweep=w=>{const ph=w.querySelector('.ph2'),r=w.querySelector('input');let t0=null;const an=t=>{if(w.dataset.touched)return;t0??=t;const p=Math.min((t-t0)/1800,1),v=50+Math.sin(p*Math.PI*2)*30*(1-p);ph.style.setProperty('--p',v+'%');r.value=v;if(p<1)requestAnimationFrame(an)};requestAnimationFrame(an)};
+const wio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const w=e.target;wio.unobserve(w);if(!RM)setTimeout(()=>sweep(w),400+[...w.parentNode.children].indexOf(w)*300)}}),{threshold:.6});
 document.querySelectorAll('.work').forEach(w=>{wio.observe(w);io.observe(w)});
 
 /* simulator — fourchettes de marché 2026 à remplacer par les tarifs KLB */
