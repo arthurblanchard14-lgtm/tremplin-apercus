@@ -21,7 +21,7 @@
    PICTURE herbe animée qui réagit au curseur, scène avant/après, carte lumineuse de Caen
    COLOUR noir profond, vert vif électrique (accent), vert sapin (support), blanc cassé
    TYPE   Syne (titres, caractère) + Manrope (texte) ; LAYOUT one-page, bandes pleine largeur */
-:root{color-scheme:dark;--bg:#050806;--bg2:#0a110d;--card:#0e1712;--line:#1b2a21;--ink:#eef5ef;--mute:#9db0a3;--g:#35f07e;--g2:#1c8a4a;--gdim:rgba(53,240,126,.14)}
+:root{color-scheme:dark;--bg:#050806;--bg2:#0a110d;--card:#0e1712;--line:#1b2a21;--ink:#eef5ef;--mute:#9db0a3;--g:#35f07e;--g2:#1c8a4a;--gdim:rgba(53,240,126,.14);--moss:#7fd49a;--mossd:#3f9a63;--sand:#dcbb7f;--sanddim:rgba(220,187,127,.13);--deep:#0b1f15}
 *{box-sizing:border-box;min-width:0}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Manrope,system-ui,sans-serif;overflow-x:clip}
@@ -33,8 +33,8 @@ a{color:inherit}
 .band{padding:clamp(64px,8vw,120px) max(5vw,18px);position:relative}
 .wrap{max-width:1240px;margin:0 auto}
 .lead{color:var(--mute);font-size:17px;max-width:60ch;margin-top:16px}
-.kick{display:inline-flex;align-items:center;gap:8px;color:var(--g);font-weight:700;font-size:14px;margin-bottom:14px}
-.kick::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--g);box-shadow:0 0 12px var(--g)}
+.kick{display:inline-flex;align-items:center;gap:8px;color:var(--sand);font-weight:700;font-size:14px;margin-bottom:14px}
+.kick::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sand);box-shadow:0 0 12px rgba(220,187,127,.55)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:999px;font:700 16px Manrope,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
 .btn.pri{background:var(--g);color:#03140a;box-shadow:0 0 0 0 var(--gdim)}
 .btn.pri:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(53,240,126,.35)}
@@ -62,10 +62,10 @@ nav.on{background:rgba(5,8,6,.82);backdrop-filter:blur(14px);border-color:var(--
 .grassbox{position:relative;z-index:2;height:clamp(220px,34vh,360px);margin-top:20px}
 #grass{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;pointer-events:none}
 .hero .wrap{position:relative;z-index:2;width:100%}
-.seasons{position:absolute;left:0;top:8px;display:flex;flex-wrap:wrap;gap:4px;padding:4px;border-radius:999px;background:rgba(5,8,6,.6);border:1px solid var(--line);backdrop-filter:blur(8px)}
-.seasons button{border:0;background:transparent;color:var(--mute);font:600 13px Manrope,sans-serif;padding:0 12px;min-height:34px;border-radius:999px;cursor:pointer}
+.seasons{position:absolute;left:0;top:8px;max-width:100%;overflow-x:auto;scrollbar-width:none;display:flex;flex-wrap:nowrap;gap:4px;padding:4px;border-radius:999px;background:rgba(5,8,6,.6);border:1px solid var(--line);backdrop-filter:blur(8px)}
+.seasons button{flex:none;border:0;background:transparent;color:var(--mute);font:600 13px Manrope,sans-serif;padding:0 12px;min-height:34px;border-radius:999px;cursor:pointer}
 .seasons button[aria-pressed=true]{background:var(--g);color:#03140a}
-@media(max-width:600px){.seasons{border-radius:18px}}
+.seasons::-webkit-scrollbar{display:none}
 @media(hover:none){.hint{display:none}}
 .hint{position:absolute;right:0;top:14px;font-size:13px;color:var(--mute);z-index:2}
 /* services */
@@ -75,12 +75,12 @@ nav.on{background:rgba(5,8,6,.82);backdrop-filter:blur(14px);border-color:var(--
 .card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;overflow:hidden;transition:border-color .3s,transform .3s}
 .card::after{content:"";position:absolute;inset:0;background:radial-gradient(240px circle at var(--mx,50%) var(--my,0%),rgba(53,240,126,.16),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
 .card:hover{border-color:#2d5a3e;transform:translateY(-4px)}.card:hover::after{opacity:1}
-.ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:var(--gdim);margin-bottom:20px}
+.ico{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(150deg,rgba(127,212,154,.16),rgba(127,212,154,.04));border:1px solid #1f3a2a;margin-bottom:20px}
 .card ul{margin:14px 0 0;padding:0;list-style:none;color:var(--mute);font-size:15px}
 .card li{padding:5px 0 5px 20px;position:relative}
-.card li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:2px;background:var(--g)}
+.card li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:2px;background:var(--mossd)}
 /* réalisations */
-.works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:44px}
+.works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:44px;width:min(1640px,calc(100vw - 24px));margin-left:calc(50% - min(820px,50vw - 12px))}
 @media(max-width:1000px){.works{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.works{grid-template-columns:minmax(0,1fr)}}
 .work{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
@@ -112,10 +112,10 @@ nav.on{background:rgba(5,8,6,.82);backdrop-filter:blur(14px);border-color:var(--
 .opt.on .sub{display:block}
 .row{display:flex;justify-content:space-between;gap:10px;font-size:14px;color:var(--mute)}
 .row b{color:var(--ink);white-space:nowrap}
-input[type=range].r{width:100%;accent-color:var(--g);height:28px}
+input[type=range].r{width:100%;accent-color:var(--mossd);height:28px}
 .out{position:sticky;top:90px;background:linear-gradient(160deg,#0f2418,#07100b);border:1px solid #23503a;border-radius:24px;padding:clamp(22px,3vw,34px);overflow:hidden}
 .out::before{content:"";position:absolute;width:300px;height:300px;right:-80px;top:-80px;background:radial-gradient(circle,rgba(53,240,126,.28),transparent 65%)}
-.big{font:800 clamp(26px,2.8vw,38px)/1.15 Syne,sans-serif;color:var(--g);margin:10px 0 6px;letter-spacing:-.01em;position:relative}.big span{white-space:nowrap}
+.big{font:800 clamp(30px,3.4vw,46px)/1.1 Manrope,sans-serif;font-variant-numeric:tabular-nums;color:var(--g);margin:10px 0 6px;letter-spacing:-.03em;position:relative}.big span{white-space:nowrap}
 .lines{margin:18px 0;padding:0;list-style:none;font-size:14px;position:relative}
 .lines li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid #1d3a2a}
 .lines li span:last-child{white-space:nowrap;color:var(--mute)}
@@ -124,9 +124,9 @@ input[type=range].r{width:100%;accent-color:var(--g);height:28px}
 @media(max-width:900px){.zone{grid-template-columns:minmax(0,1fr)}}
 .mapbox{position:relative;background:radial-gradient(circle at 55% 75%,rgba(53,240,126,.12),transparent 60%),var(--bg2);border:1px solid var(--line);border-radius:26px;aspect-ratio:600/650;max-height:620px;width:100%}
 .mapbox svg{position:absolute;inset:0;width:100%;height:100%}
-.town circle.dot{fill:var(--g);transition:r .2s}
+.town circle.dot{fill:var(--mossd);transition:r .2s}
 .town text{fill:var(--mute);font:600 15px Manrope,sans-serif;paint-order:stroke;stroke:#050806;stroke-width:5px}
-.town.hit text{fill:#fff}.town.hit circle.dot{r:9}
+.town.hit text{fill:#fff}.town.hit circle.dot{r:9;fill:var(--g)}
 .pulse{fill:none;stroke:var(--g);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center}
 .town.hit .pulse{animation:pl 1.6s ease-out infinite}
 @keyframes pl{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(4)}}
@@ -140,8 +140,8 @@ input[type=range].r{width:100%;accent-color:var(--g);height:28px}
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:44px;counter-reset:s}
 @media(max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.steps{grid-template-columns:minmax(0,1fr)}}
-.step{border-top:2px solid var(--g);padding-top:18px}
-.step b{display:block;font:800 40px Syne,sans-serif;color:var(--g);opacity:.9;margin-bottom:8px}
+.step{border-top:2px solid var(--mossd);padding-top:18px}
+.step b{display:block;font:800 40px Syne,sans-serif;color:var(--sand);margin-bottom:8px}
 .step p{color:var(--mute);font-size:15px;margin-top:8px}
 /* about + reviews */
 .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:44px}
@@ -171,19 +171,19 @@ footer a{color:var(--mute)}
 .callbar{display:none}
 @media(max-width:760px){.callbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;inset:auto 10px 10px;z-index:60;padding:8px;background:rgba(8,16,11,.92);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:20px}.callbar .btn{min-height:48px;padding:0 10px}}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.rv.in{opacity:1;transform:none}
-.badge{display:inline-block;margin-top:14px;padding:5px 10px;border-radius:999px;background:var(--gdim);color:var(--g);font-size:13px;font-weight:700}
+.badge{display:inline-block;margin-top:14px;padding:5px 10px;border-radius:999px;background:var(--sanddim);color:var(--sand);font-size:13px;font-weight:700}
 .cf{display:grid;gap:6px;padding:14px 0;border-top:1px solid var(--line)}.cf:first-child{border-top:0;padding-top:0}
 .credit{position:relative;margin:0 0 16px;padding:12px 14px;border-radius:14px;background:rgba(53,240,126,.08);border:1px solid #23503a;font-size:14px}
-.credit b{color:var(--g);white-space:nowrap}.credit small{display:block;color:var(--mute);font-size:13px;margin-top:4px}
+.credit b{color:var(--moss);white-space:nowrap}.credit small{display:block;color:var(--mute);font-size:13px;margin-top:4px}
 .meteo{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:20px;margin-top:40px;align-items:start}
 @media(max-width:900px){.meteo{grid-template-columns:minmax(0,1fr)}}
 .days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
 @media(max-width:600px){.days{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.day{flex:0 0 86px;scroll-snap-align:start}}
 .day{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 6px;text-align:center;display:grid;gap:4px;justify-items:center}
 .day.dry{border-color:#2d6a47;background:linear-gradient(180deg,rgba(53,240,126,.08),var(--card))}
-.day small{color:var(--mute);font-size:13px}.day b{font-size:17px}.day .rain{font-size:13px;color:#7cc7ff}.day.dry .rain{color:var(--g)}
+.day small{color:var(--mute);font-size:13px}.day b{font-size:17px}.day .rain{font-size:13px;color:#7cc7ff}.day.dry .rain{color:var(--moss)}
 .tip{background:linear-gradient(160deg,#0f2418,#07100b);border:1px solid #23503a;border-radius:24px;padding:26px;display:grid;gap:12px}
-.tl{margin:0;padding:0;list-style:none;color:var(--mute);font-size:15px}.tl li{padding:6px 0 6px 20px;position:relative}.tl li::before{content:"";position:absolute;left:0;top:16px;width:8px;height:2px;background:var(--g)}
+.tl{margin:0;padding:0;list-style:none;color:var(--mute);font-size:15px}.tl li{padding:6px 0 6px 20px;position:relative}.tl li::before{content:"";position:absolute;left:0;top:16px;width:8px;height:2px;background:var(--mossd)}
 #wx{font-weight:600}
 .drop{position:relative;display:flex;align-items:center;gap:14px;padding:16px;border:1.5px dashed #2f4a3a;border-radius:16px;cursor:pointer;background:#08100b;font-weight:400}
 .drop:hover,.drop.over{border-color:var(--g);background:rgba(53,240,126,.05)}.drop:focus-within{outline:2px solid var(--g);outline-offset:2px}
@@ -195,7 +195,11 @@ footer a{color:var(--mute)}
 .th button{position:absolute;top:4px;right:4px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(5,8,6,.85);color:#fff;cursor:pointer;font-size:18px;line-height:1}
 #grow{position:fixed;right:6px;bottom:20px;width:52px;height:230px;z-index:40;pointer-events:none;display:none}
 @media(min-width:1200px){#grow{display:block}}
-#prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--g);box-shadow:0 0 10px var(--g);z-index:70}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--mossd),var(--g));z-index:70}
+.deep{background:radial-gradient(70% 60% at 85% 0%,rgba(53,240,126,.12),transparent 60%),radial-gradient(50% 50% at 0% 100%,rgba(220,187,127,.07),transparent 60%),var(--deep);border-block:1px solid #173525}
+.deep .panel{background:rgba(5,14,9,.55);border-color:#1d3d2b}
+.deep h2{color:#f3fbf5}
+.out .lab{position:relative;color:var(--sand);font-size:14px;font-weight:700}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.town.hit .pulse{animation:none}}
 </style>
 </head>
@@ -251,12 +255,12 @@ footer a{color:var(--mute)}
 <section class="band" id="estimation" style="background:var(--bg2)">
   <div class="wrap">
     <div class="kick rv">Simulateur</div>
-    <h2 class="rv">Combien coûte votre projet ? Réponse immédiate.</h2>
+    <h2 class="rv">Combien coûte votre projet&nbsp;? Réponse immédiate.</h2>
     <p class="lead rv">Cochez ce que vous voulez faire, réglez les quantités : vous obtenez une fourchette de budget, puis vous l'envoyez en un clic pour un devis précis.</p>
     <div class="sim">
       <div class="panel opts" id="opts"></div>
       <aside class="out" aria-live="polite">
-        <div style="position:relative;color:var(--mute);font-size:14px;font-weight:600">Budget estimé</div>
+        <div class="lab">Budget estimé</div>
         <div class="big" id="total">—</div>
         <div style="position:relative;color:var(--mute);font-size:14px" id="totSub">Cochez au moins une prestation.</div>
         <ul class="lines" id="lines"></ul>
@@ -268,7 +272,7 @@ footer a{color:var(--mute)}
   </div>
 </section>
 
-<section class="band" id="contrat">
+<section class="band deep" id="contrat">
   <div class="wrap">
     <div class="kick rv">Contrat d'entretien</div>
     <h2 class="rv">Un jardin net toute l'année, un prix par mois.</h2>
@@ -276,7 +280,7 @@ footer a{color:var(--mute)}
     <div class="sim">
       <div class="panel" id="ctr"></div>
       <aside class="out" aria-live="polite">
-        <div style="position:relative;color:var(--mute);font-size:14px;font-weight:600">Votre contrat</div>
+        <div class="lab">Votre contrat</div>
         <div class="big" id="cTot">—</div>
         <div style="position:relative;color:var(--mute);font-size:14px">par mois, fourchette indicative TTC</div>
         <ul class="lines" id="cLines"></ul>
@@ -394,7 +398,7 @@ const S=[
  ['ent','Entretien','Un jardin net toute l’année, sans y passer vos week-ends.',['Tonte et désherbage','Taille de haies et arbustes','Débroussaillage','Ramassage des feuilles']],
  ['am','Aménagements','Les éléments qui rendent un extérieur vraiment pratique.',['Terrasses','Allées et bordures','Clôtures','Murets']],
  ['ela','Élagage & abattage','Des arbres sains, sûrs et qui laissent passer la lumière.',['Taille et élagage','Abattage','Dessouchage','Évacuation des déchets verts']]];
-$('#cards').innerHTML=S.map(([k,t,d,l])=>`<article class="card rv"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#35f07e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IC[k]}</svg></div><h3>${t}</h3><p style="color:var(--mute);margin-top:10px;font-size:15px">${d}</p><ul>${l.map(x=>`<li>${x}</li>`).join('')}</ul>${k==='ent'&&SAP?'<span class="badge">Éligible au crédit d’impôt de 50 %</span>':''}</article>`).join('');
+$('#cards').innerHTML=S.map(([k,t,d,l])=>`<article class="card rv"><div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7fd49a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${IC[k]}</svg></div><h3>${t}</h3><p style="color:var(--mute);margin-top:10px;font-size:15px">${d}</p><ul>${l.map(x=>`<li>${x}</li>`).join('')}</ul>${k==='ent'&&SAP?'<span class="badge">Éligible au crédit d’impôt de 50 %</span>':''}</article>`).join('');
 document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}));
 
 /* steps */
@@ -503,7 +507,7 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=49.18&longitude=-0.37&dai
   let w=dry.length?`Jours secs prévus : ${dry.join(', ')}. Idéal pour intervenir.`:'Semaine humide : place aux travaux qui ne craignent pas la pluie.';
   if(fr)w+=` Gel annoncé (${fr.n}) : pas de plantation ce jour-là.`;
   $('#wx').textContent=w;$('#mNote').innerHTML='Prévisions <a href="https://open-meteo.com/">Open-Meteo</a>, mises à jour automatiquement.'})
- .catch(()=>{$('#days').style.display='none';$('#mNote').textContent='Les prévisions en direct de Caen s’affichent ici sur le site en ligne.'});
+ .catch(()=>{$('#days').style.display='none';$('.meteo').style.gridTemplateColumns='minmax(0,1fr)';$('#mNote').textContent='Les prévisions en direct de Caen s’affichent ici sur le site en ligne.'});
 
 /* photos du jardin — compressées avant envoi (limite Netlify : 8 Mo par envoi) */
 const pics=[];
