@@ -110,7 +110,7 @@ nav.on{background:rgba(5,8,6,.82);backdrop-filter:blur(14px);border-color:var(--
 input[type=range].r{width:100%;accent-color:var(--g);height:28px}
 .out{position:sticky;top:90px;background:linear-gradient(160deg,#0f2418,#07100b);border:1px solid #23503a;border-radius:24px;padding:clamp(22px,3vw,34px);overflow:hidden}
 .out::before{content:"";position:absolute;width:300px;height:300px;right:-80px;top:-80px;background:radial-gradient(circle,rgba(53,240,126,.28),transparent 65%)}
-.big{font:800 clamp(34px,5vw,56px)/1 Syne,sans-serif;color:var(--g);margin:10px 0 6px;letter-spacing:-.02em;white-space:nowrap;position:relative}
+.big{font:800 clamp(26px,2.8vw,38px)/1.15 Syne,sans-serif;color:var(--g);margin:10px 0 6px;letter-spacing:-.01em;position:relative}.big span{white-space:nowrap}
 .lines{margin:18px 0;padding:0;list-style:none;font-size:14px;position:relative}
 .lines li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid #1d3a2a}
 .lines li span:last-child{white-space:nowrap;color:var(--mute)}
@@ -372,7 +372,7 @@ const calc=()=>{let lo=0,hi=0,L=[];P.forEach(p=>{const s=st[p.id];if(!s.on)retur
  const T=$('#total');if(!L.length){T.textContent='—';$('#totSub').textContent='Cochez au moins une prestation.';return}
  if(!hi){T.textContent='Sur devis';$('#totSub').textContent='Ces travaux sont chiffrés après visite.';return}
  $('#totSub').textContent=L.some(l=>l[1]==='sur devis')?'+ aménagements chiffrés sur devis':'Fourchette indicative TTC';
- const from=shown,to=lo,t0=performance.now();const an=t=>{const k=RM?1:Math.min((t-t0)/500,1),e=1-(1-k)**3;T.textContent=`${eur(from+(to-from)*e)} – ${eur(hi)}`;if(k<1)requestAnimationFrame(an);else shown=to};requestAnimationFrame(an)};
+ const from=shown,to=lo,t0=performance.now();const an=t=>{const k=RM?1:Math.min((t-t0)/500,1),e=1-(1-k)**3;T.innerHTML=`<span>${eur(from+(to-from)*e)}</span> – <span>${eur(hi)}</span>`;if(k<1)requestAnimationFrame(an);else shown=to};requestAnimationFrame(an)};
 $('#opts').addEventListener('change',e=>{const id=e.target.dataset.id;if(!id)return;st[id].on=e.target.checked;$('#o-'+id).classList.toggle('on',e.target.checked);calc()});
 $('#opts').addEventListener('input',e=>{const id=e.target.dataset.r;if(!id)return;const p=P.find(x=>x.id===id);st[id].v=+e.target.value;$('#v-'+id).textContent=`${e.target.value} ${p.u}`;calc()});
 const first=document.querySelector('[data-id=crea]');first.checked=true;st.crea.on=true;$('#o-crea').classList.add('on');calc();
