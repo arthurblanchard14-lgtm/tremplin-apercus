@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>KLB Paysage · Paysagiste à Caen (aperçu Tremplin, version claire)</title>
+<meta name="description" content="KLB Paysage, paysagiste à Caen et alentours : création de jardins, entretien, aménagements extérieurs et élagage. Estimez votre projet en ligne et demandez votre devis.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LandscapingBusiness","name":"KLB Paysage","areaServed":"Caen et alentours","address":{"@type":"PostalAddress","addressLocality":"Caen","addressCountry":"FR"},"telephone":"[À COMPLÉTER]"}
+</script>
+<style>
+@font-face{font-family:"Syne";src:url(../fonts/syne-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Syne";src:url(../fonts/syne-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Syne";src:url(../fonts/syne-latin-800-normal.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Manrope";src:url(../fonts/manrope-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Manrope";src:url(../fonts/manrope-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Manrope";src:url(../fonts/manrope-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+/* VOICE  jeune, précis, vivant : un paysagiste qui arrive avec des outils d'aujourd'hui
+   IDEA   un jardin de nuit éclairé : le vert vit dans le noir, comme des bornes lumineuses
+   PICTURE herbe animée qui réagit au curseur, scène avant/après, carte lumineuse de Caen
+   COLOUR noir profond, vert vif électrique (accent), vert sapin (support), blanc cassé
+   TYPE   Syne (titres, caractère) + Manrope (texte) ; LAYOUT one-page, bandes pleine largeur */
+:root{color-scheme:dark;--bg:#050806;--bg2:#0a110d;--card:#0e1712;--line:#1b2a21;--ink:#eef5ef;--mute:#9db0a3;--g:#35f07e;--g2:#1c8a4a;--gdim:rgba(53,240,126,.14);--moss:#7fd49a;--mossd:#3f9a63;--sand:#dcbb7f;--sanddim:rgba(220,187,127,.13);--deep:#0b1f15}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Manrope,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Syne,Manrope,sans-serif;line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:clamp(30px,4.4vw,50px);letter-spacing:-.02em}
+h3{font-size:21px}
+p{margin:0}
+a{color:inherit}
+.band{padding:clamp(64px,8vw,120px) max(5vw,18px);position:relative}
+.wrap{max-width:1240px;margin:0 auto}
+.lead{color:var(--mute);font-size:17px;max-width:60ch;margin-top:16px}
+.kick{display:inline-flex;align-items:center;gap:8px;color:var(--sand);font-weight:700;font-size:14px;margin-bottom:14px}
+.kick::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sand);box-shadow:0 0 12px rgba(220,187,127,.55)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:999px;font:700 16px Manrope,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.btn.pri{background:var(--g);color:#03140a;box-shadow:0 0 0 0 var(--gdim)}
+.btn.pri:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(53,240,126,.35)}
+.btn.sec{background:transparent;color:var(--ink);border:1px solid #2c4335}
+.btn.sec:hover{border-color:var(--g);color:var(--g)}
+:focus-visible{outline:2px solid var(--g);outline-offset:3px}
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px max(5vw,18px);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.on{background:rgba(5,8,6,.82);backdrop-filter:blur(14px);border-color:var(--line)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 20px Syne,sans-serif;letter-spacing:-.01em}
+.logo small{display:block;font:500 11px Manrope,sans-serif;color:var(--mute);letter-spacing:.02em}
+.links{display:flex;gap:26px;align-items:center}
+.links a{text-decoration:none;color:var(--mute);font-weight:500;font-size:15px}
+.links a:hover{color:var(--g)}
+.burger{display:none;width:46px;height:46px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+@media(max-width:900px){.links{position:fixed;inset:68px 12px auto;flex-direction:column;align-items:stretch;gap:4px;padding:12px;background:#08100b;border:1px solid var(--line);border-radius:18px;display:none}.links.open{display:flex}.links a{padding:12px}.burger{display:block}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-content:center;padding-top:110px;padding-bottom:0;overflow:hidden;background:radial-gradient(60% 50% at 70% 100%,rgba(53,240,126,.16),transparent 70%),radial-gradient(40% 40% at 10% 10%,rgba(28,138,74,.18),transparent 70%),var(--bg)}
+.hero h1{font-size:clamp(44px,8.4vw,112px);letter-spacing:-.035em;max-width:12ch;position:relative;z-index:2}
+.hero h1 em{font-style:normal;color:var(--g);text-shadow:0 0 40px rgba(53,240,126,.45)}
+.hero .lead{font-size:clamp(17px,1.6vw,19px);position:relative;z-index:2}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;position:relative;z-index:2}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;position:relative;z-index:2}
+.chip{padding:7px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--mute);background:rgba(14,23,18,.6)}
+.grassbox{position:relative;z-index:2;height:clamp(220px,34vh,360px);margin-top:20px}
+#grass{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;pointer-events:none}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.seasons{position:absolute;left:0;top:8px;max-width:100%;overflow-x:auto;scrollbar-width:none;display:flex;flex-wrap:nowrap;gap:4px;padding:4px;border-radius:999px;background:rgba(5,8,6,.6);border:1px solid var(--line);backdrop-filter:blur(8px)}
+.seasons button{flex:none;border:0;background:transparent;color:var(--mute);font:600 13px Manrope,sans-serif;padding:0 12px;min-height:34px;border-radius:999px;cursor:pointer}
+.seasons button[aria-pressed=true]{background:var(--g);color:#03140a}
+.seasons::-webkit-scrollbar{display:none}
+@media(hover:none){.hint{display:none}}
+.hint{position:absolute;right:0;top:14px;font-size:13px;color:var(--mute);z-index:2}
+/* services */
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:44px}
+@media(max-width:1000px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.grid4{grid-template-columns:minmax(0,1fr)}}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;overflow:hidden;transition:border-color .3s,transform .3s}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(240px circle at var(--mx,50%) var(--my,0%),rgba(53,240,126,.16),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{border-color:#2d5a3e;transform:translateY(-4px)}.card:hover::after{opacity:1}
+.ico{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(150deg,rgba(127,212,154,.16),rgba(127,212,154,.04));border:1px solid #1f3a2a;margin-bottom:20px}
+.card ul{margin:14px 0 0;padding:0;list-style:none;color:var(--mute);font-size:15px}
+.card li{padding:5px 0 5px 20px;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:2px;background:var(--mossd)}
+/* réalisations */
+.works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:44px;width:min(1640px,calc(100vw - 24px));margin-left:calc(50% - min(820px,50vw - 12px))}
+@media(max-width:1000px){.works{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.works{grid-template-columns:minmax(0,1fr)}}
+.work{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.ph2{position:relative;aspect-ratio:3/4;background:#0a110d;overflow:hidden}
+.ph2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .7s ease,transform 6s ease}
+.ph2 img.ap{clip-path:inset(0 0 0 var(--p,50%))}
+.work:hover .ph2 img{transform:scale(1.03)}
+.ph2::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,rgba(5,8,6,.85));pointer-events:none}
+.ph2 .bar{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;margin-left:-1px;background:var(--g);box-shadow:0 0 16px var(--g);pointer-events:none;z-index:2}
+.ph2 .knob{position:absolute;top:50%;left:var(--p,50%);width:50px;height:50px;margin:-25px 0 0 -25px;border-radius:50%;background:var(--g);display:grid;place-items:center;color:#03140a;font-weight:800;box-shadow:0 0 28px rgba(53,240,126,.6);pointer-events:none;z-index:2}
+.ph2 input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3;touch-action:pan-y}
+.ph2 input:focus-visible~.knob{outline:3px solid #fff;outline-offset:3px}
+.tg{position:absolute;top:14px;z-index:2;padding:6px 14px;border-radius:999px;background:rgba(5,8,6,.72);backdrop-filter:blur(8px);font-weight:700;font-size:14px;pointer-events:none}
+.wcap{position:absolute;left:18px;right:18px;bottom:16px;z-index:2}
+.wcap h3{font-size:20px}.wcap p{color:var(--mute);font-size:14px;margin-top:4px}
+.note{font-size:13px;color:var(--mute);margin-top:12px}
+/* simulator */
+.sim{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;margin-top:44px;align-items:start}
+@media(max-width:900px){.sim{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(18px,3vw,30px)}
+.opts{display:grid;gap:10px}
+.opt{border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:border-color .2s,background .2s}
+.opt.on{border-color:var(--g);background:rgba(53,240,126,.06)}
+.opt label.t{display:flex;align-items:center;gap:12px;cursor:pointer;font-weight:700;min-height:28px}
+.opt input[type=checkbox]{appearance:none;width:22px;height:22px;border-radius:7px;border:2px solid #3a5546;display:grid;place-items:center;flex:none;margin:0;cursor:pointer}
+.opt input[type=checkbox]:checked{background:var(--g);border-color:var(--g)}
+.opt input[type=checkbox]:checked::after{content:"";width:6px;height:11px;border:solid #03140a;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.opt .sub{display:none;margin-top:12px;padding-left:34px}
+.opt.on .sub{display:block}
+.row{display:flex;justify-content:space-between;gap:10px;font-size:14px;color:var(--mute)}
+.row b{color:var(--ink);white-space:nowrap}
+input[type=range].r{width:100%;accent-color:var(--mossd);height:28px}
+.out{position:sticky;top:90px;background:linear-gradient(160deg,#0f2418,#07100b);border:1px solid #23503a;border-radius:24px;padding:clamp(22px,3vw,34px);overflow:hidden}
+.out::before{content:"";position:absolute;width:300px;height:300px;right:-80px;top:-80px;background:radial-gradient(circle,rgba(53,240,126,.28),transparent 65%)}
+.big{font:800 clamp(30px,3.4vw,46px)/1.1 Manrope,sans-serif;font-variant-numeric:tabular-nums;color:var(--g);margin:10px 0 6px;letter-spacing:-.03em;position:relative}.big span{white-space:nowrap}
+.lines{margin:18px 0;padding:0;list-style:none;font-size:14px;position:relative}
+.lines li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid #1d3a2a}
+.lines li span:last-child{white-space:nowrap;color:var(--mute)}
+/* map */
+.zone{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:30px;align-items:center;margin-top:10px}
+@media(max-width:900px){.zone{grid-template-columns:minmax(0,1fr)}}
+.mapbox{position:relative;background:radial-gradient(circle at 55% 75%,rgba(53,240,126,.12),transparent 60%),var(--bg2);border:1px solid var(--line);border-radius:26px;aspect-ratio:600/650;max-height:620px;width:100%}
+.mapbox svg{position:absolute;inset:0;width:100%;height:100%}
+.town circle.dot{fill:var(--mossd);transition:r .2s}
+.town text{fill:var(--mute);font:600 15px Manrope,sans-serif;paint-order:stroke;stroke:#050806;stroke-width:5px}
+.town.hit text{fill:#fff}.town.hit circle.dot{r:9;fill:var(--g)}
+.pulse{fill:none;stroke:var(--g);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center}
+.town.hit .pulse{animation:pl 1.6s ease-out infinite}
+@keyframes pl{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(4)}}
+.search{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.search input{flex:1 1 220px}
+.res{margin-top:12px;min-height:26px;font-weight:600}
+.towns{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.towns button{background:var(--card);border:1px solid var(--line);color:var(--mute);border-radius:999px;padding:8px 14px;font:500 14px Manrope,sans-serif;cursor:pointer;min-height:40px}
+.towns button:hover,.towns button.hit{border-color:var(--g);color:var(--g)}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:44px;counter-reset:s}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.steps{grid-template-columns:minmax(0,1fr)}}
+.step{border-top:2px solid var(--mossd);padding-top:18px}
+.step b{display:block;font:800 40px Syne,sans-serif;color:var(--sand);margin-bottom:8px}
+.step p{color:var(--mute);font-size:15px;margin-top:8px}
+/* about + reviews */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:44px}
+@media(max-width:800px){.two{grid-template-columns:minmax(0,1fr)}}
+.ph{border:1px dashed #2f4a3a;border-radius:22px;padding:30px;display:grid;gap:10px;align-content:center;min-height:220px;background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(53,240,126,.03) 14px 28px)}
+.ph .mute{color:var(--mute)}
+/* form */
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media(max-width:640px){form{grid-template-columns:minmax(0,1fr)}}
+.f{display:grid;gap:6px;font-size:14px;font-weight:600}
+.f.full{grid-column:1/-1}
+input,select,textarea{font:16px Manrope,sans-serif;color:var(--ink);background:#08100b;border:1px solid #24372b;border-radius:14px;padding:13px 14px;min-height:50px;width:100%}
+textarea{min-height:130px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--g);outline:none;box-shadow:0 0 0 3px var(--gdim)}
+.rgpd{display:flex;gap:10px;align-items:flex-start;font-weight:400;color:var(--mute);font-size:13px}
+.rgpd input{width:20px;min-height:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--g)}
+.hp{position:absolute;left:-9999px}
+.ok{grid-column:1/-1;padding:14px 16px;border-radius:14px;background:rgba(53,240,126,.1);border:1px solid #2d6a47;display:none}
+.contact{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:30px;margin-top:40px}
+@media(max-width:900px){.contact{grid-template-columns:minmax(0,1fr)}}
+.info{display:grid;gap:14px;align-content:start}
+.info a,.info div{display:flex;gap:14px;align-items:center;padding:18px;border-radius:18px;background:var(--card);border:1px solid var(--line);text-decoration:none}
+.info small{display:block;color:var(--mute);font-size:13px}
+footer{border-top:1px solid var(--line);padding:30px max(5vw,18px) 110px;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
+footer a{color:var(--mute)}
+.callbar{display:none}
+@media(max-width:760px){.callbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;inset:auto 10px 10px;z-index:60;padding:8px;background:rgba(8,16,11,.92);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:20px}.callbar .btn{min-height:48px;padding:0 10px}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.rv.in{opacity:1;transform:none}
+.badge{display:inline-block;margin-top:14px;padding:5px 10px;border-radius:999px;background:var(--sanddim);color:var(--sand);font-size:13px;font-weight:700}
+.cf{display:grid;gap:6px;padding:14px 0;border-top:1px solid var(--line)}.cf:first-child{border-top:0;padding-top:0}
+.credit{position:relative;margin:0 0 16px;padding:12px 14px;border-radius:14px;background:rgba(53,240,126,.08);border:1px solid #23503a;font-size:14px}
+.credit b{color:var(--moss);white-space:nowrap}.credit small{display:block;color:var(--mute);font-size:13px;margin-top:4px}
+.meteo{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:20px;margin-top:40px;align-items:start}
+@media(max-width:900px){.meteo{grid-template-columns:minmax(0,1fr)}}
+.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+@media(max-width:600px){.days{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.day{flex:0 0 86px;scroll-snap-align:start}}
+.day{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 6px;text-align:center;display:grid;gap:4px;justify-items:center}
+.day.dry{border-color:#2d6a47;background:linear-gradient(180deg,rgba(53,240,126,.08),var(--card))}
+.day small{color:var(--mute);font-size:13px}.day b{font-size:17px}.day .rain{font-size:13px;color:#7cc7ff}.day.dry .rain{color:var(--moss)}
+.tip{background:linear-gradient(160deg,#0f2418,#07100b);border:1px solid #23503a;border-radius:24px;padding:26px;display:grid;gap:12px}
+.tl{margin:0;padding:0;list-style:none;color:var(--mute);font-size:15px}.tl li{padding:6px 0 6px 20px;position:relative}.tl li::before{content:"";position:absolute;left:0;top:16px;width:8px;height:2px;background:var(--mossd)}
+#wx{font-weight:600}
+.drop{position:relative;display:flex;align-items:center;gap:14px;padding:16px;border:1.5px dashed #2f4a3a;border-radius:16px;cursor:pointer;background:#08100b;font-weight:400}
+.drop:hover,.drop.over{border-color:var(--g);background:rgba(53,240,126,.05)}.drop:focus-within{outline:2px solid var(--g);outline-offset:2px}
+.drop input{position:absolute;width:1px;height:1px;opacity:0;min-height:0;padding:0}
+.drop b{display:block;font-weight:700}.drop small{color:var(--mute);font-size:13px}
+.thumbs{display:flex;gap:10px;flex-wrap:wrap}.thumbs:empty{display:none}
+.th{position:relative;width:88px;height:88px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#08100b}
+.th img{width:100%;height:100%;object-fit:cover}
+.th button{position:absolute;top:4px;right:4px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(5,8,6,.85);color:#fff;cursor:pointer;font-size:18px;line-height:1}
+#grow{position:fixed;right:6px;bottom:20px;width:52px;height:230px;z-index:40;pointer-events:none;display:none}
+@media(min-width:1200px){#grow{display:block}}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--mossd),var(--g));z-index:70}
+.deep{background:radial-gradient(70% 60% at 85% 0%,rgba(53,240,126,.12),transparent 60%),radial-gradient(50% 50% at 0% 100%,rgba(220,187,127,.07),transparent 60%),var(--deep);border-block:1px solid #173525}
+.deep .panel{background:rgba(5,14,9,.55);border-color:#1d3d2b}
+.deep h2{color:#f3fbf5}
+.out .lab{position:relative;color:var(--sand);font-size:14px;font-weight:700}
+
+/* VERSION CLAIRE : haut de page sombre (effet waouh), contenu clair et rassurant */
+.light{--bg:#f5f2ea;--bg2:#ebeee4;--card:#ffffff;--line:#dde3d5;--ink:#15231a;--mute:#55655a;--gt:#1d7a44;--moss:#2f8a55;--mossd:#3b9a62;--sand:#8a6428;--sanddim:rgba(138,100,40,.1);--gdim:rgba(29,122,68,.1);display:block;background:var(--bg);color:var(--ink)}
+.light .kick::before{box-shadow:none}
+.light .card{box-shadow:0 1px 0 rgba(20,40,25,.04)}.light .card:hover{border-color:#b9d3bf;box-shadow:0 18px 40px -28px rgba(20,60,35,.35)}
+.light .card::after{background:radial-gradient(240px circle at var(--mx,50%) var(--my,0%),rgba(29,122,68,.07),transparent 60%)}
+.light .ico{background:rgba(29,122,68,.08);border-color:#d3e2d6}
+.light .btn.sec{color:var(--ink);border-color:#c5cfc1}.light .btn.sec:hover{color:var(--gt);border-color:var(--gt)}
+.light .btn.pri:hover{box-shadow:0 10px 30px rgba(29,122,68,.3)}
+.light .opt.on{border-color:var(--gt);background:rgba(29,122,68,.05)}.light .opt input[type=checkbox]{border-color:#b3c2b6}
+.light .out{background:#fff;border-color:var(--line);box-shadow:0 24px 50px -32px rgba(20,60,35,.35)}
+.light .out::before{background:radial-gradient(circle,rgba(53,240,126,.16),transparent 65%)}
+.light .big{color:var(--gt)}.light .lines li{border-top-color:var(--line)}
+.light .credit{background:rgba(29,122,68,.06);border-color:#cfe2d3}.light .credit b{color:var(--gt)}
+.light input,.light select,.light textarea{background:#fff;border-color:#cdd6c9;color:var(--ink)}
+.light input:focus,.light select:focus,.light textarea:focus{border-color:var(--gt);box-shadow:0 0 0 3px rgba(29,122,68,.15)}
+.light .drop{background:#fbfaf6;border-color:#c2cfc0}.light .drop:hover,.light .drop.over{border-color:var(--gt);background:rgba(29,122,68,.04)}
+.light .ok{background:rgba(29,122,68,.07);border-color:#bfe0c8}
+.light .ph{border-color:#c6d1c2;background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(29,122,68,.04) 14px 28px)}
+.light .ph2{background:#dde3d5;color:#eef5ef}.light .wcap p{color:#c9d6cc}.light .work{border-color:var(--line);box-shadow:0 20px 40px -30px rgba(20,40,25,.4)}
+.light .day.dry{border-color:#9fd1ae;background:linear-gradient(180deg,rgba(29,122,68,.08),#fff)}.light .day .rain{color:#2a77b5}.light .day.dry .rain{color:var(--gt)}
+.light .tip{background:#fff;border-color:var(--line);box-shadow:0 24px 50px -32px rgba(20,60,35,.3)}.light .tip h3{color:var(--gt)}
+.light .mapbox{background:radial-gradient(circle at 55% 75%,rgba(29,122,68,.10),transparent 60%),#fff;border-color:var(--line)}
+.light .town text{stroke:#fff}.light .town.hit text{fill:var(--ink)}
+.light .towns button{background:#fff}.light .towns button:hover,.light .towns button.hit{border-color:var(--gt);color:var(--gt)}
+.light footer{border-color:var(--line)}
+.light .deep{--bg:#050806;--card:#0e1712;--line:#1b2a21;--ink:#eef5ef;--mute:#9db0a3;--gt:#35f07e;--moss:#7fd49a;--mossd:#3f9a63;--sand:#dcbb7f;color:var(--ink)}
+.light .deep .out{background:linear-gradient(160deg,#0f2418,#07100b);border-color:#23503a;box-shadow:none}
+.light .deep .out::before{background:radial-gradient(circle,rgba(53,240,126,.28),transparent 65%)}
+.light .deep .lines li{border-top-color:#1d3a2a}.light .deep .credit{background:rgba(53,240,126,.08);border-color:#23503a}.light .deep .credit b{color:var(--moss)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.town.hit .pulse{animation:none}}
+</style>
+</head>
+<body>
+<div id="prog" aria-hidden="true"></div>
+<nav id="nav">
+  <a class="logo" href="#top" aria-label="KLB Paysage, accueil">
+    <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12" fill="#0e1712" stroke="#1b2a21"/><path d="M11 29C11 17 19 10 30 10c0 12-7 19-19 19z" fill="#35f07e"/><path d="M11 29l12-12" stroke="#050806" stroke-width="2.4" stroke-linecap="round"/></svg>
+    <span>KLB Paysage<small>Paysagiste · Caen</small></span>
+  </a>
+  <div class="links" id="links">
+    <a href="#prestations">Prestations</a><a href="#avant-apres">Réalisations</a><a href="#estimation">Estimation</a><a href="#contrat">Entretien</a><a href="#zone">Zone</a><a href="#contact">Contact</a>
+    <a class="btn pri" href="#estimation" style="color:#03140a">Estimer mon projet</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="links">
+    <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</nav>
+
+<header class="band hero" id="top">
+  <canvas id="grass" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="kick">Paysagiste à Caen et alentours</div>
+    <h1>Votre jardin, <em>enfin vivant.</em></h1>
+    <p class="lead">KLB Paysage crée, aménage et entretient les extérieurs de Caen et des communes voisines. Un jeune paysagiste, un seul interlocuteur, du premier croquis au dernier coup de taille-haie.</p>
+    <div class="cta">
+      <a class="btn pri" href="#estimation">Estimer mon projet en 1 minute</a>
+      <a class="btn sec" href="tel:+33600000000">Appeler · 06 XX XX XX XX</a>
+    </div>
+    <div class="chips"><span class="chip">Création de jardins</span><span class="chip">Entretien</span><span class="chip">Terrasses &amp; allées</span><span class="chip">Élagage</span></div>
+  </div>
+  <div class="grassbox wrap"><div class="seasons" id="seasons" role="group" aria-label="Ambiance de saison"></div><span class="hint" aria-hidden="true">Passez la souris sur l'herbe</span></div>
+</header>
+<main class="light">
+
+<section class="band" id="prestations" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="kick rv">Prestations</div>
+    <h2 class="rv">Du terrain nu au jardin dont on profite.</h2>
+    <p class="lead rv">Quatre métiers, un seul paysagiste. Vous savez qui vient chez vous, et qui répond au téléphone.</p>
+    <div class="grid4" id="cards"></div>
+  </div>
+</section>
+
+<section class="band" id="avant-apres">
+  <div class="wrap">
+    <div class="kick rv">Réalisations</div>
+    <h2 class="rv">Avant, après. Les chantiers parlent.</h2>
+    <p class="lead rv">Des chantiers réalisés par KLB Paysage. Faites glisser le curseur pour comparer.</p>
+    <div class="works" id="works"></div>
+  </div>
+</section>
+
+<section class="band" id="estimation" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="kick rv">Simulateur</div>
+    <h2 class="rv">Combien coûte votre projet&nbsp;? Réponse immédiate.</h2>
+    <p class="lead rv">Cochez ce que vous voulez faire, réglez les quantités : vous obtenez une fourchette de budget, puis vous l'envoyez en un clic pour un devis précis.</p>
+    <div class="sim">
+      <div class="panel opts" id="opts"></div>
+      <aside class="out" aria-live="polite">
+        <div class="lab">Budget estimé</div>
+        <div class="big" id="total">—</div>
+        <div style="position:relative;color:var(--mute);font-size:14px" id="totSub">Cochez au moins une prestation.</div>
+        <ul class="lines" id="lines"></ul>
+        <div class="credit" id="sCredit" style="display:none"></div>
+        <button class="btn pri" id="send" style="width:100%;position:relative">Recevoir mon devis précis</button>
+        <p class="note" style="position:relative">Fourchettes de prix moyennes constatées en France en 2026, à titre indicatif. Seul le devis de KLB Paysage, après visite, engage.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="band deep" id="contrat">
+  <div class="wrap">
+    <div class="kick rv">Contrat d'entretien</div>
+    <h2 class="rv">Un jardin net toute l'année, un prix par mois.</h2>
+    <p class="lead rv">Réglez votre pelouse et vos haies : vous voyez ce que coûte un entretien régulier, lissé sur 12 mois.</p>
+    <div class="sim">
+      <div class="panel" id="ctr"></div>
+      <aside class="out" aria-live="polite">
+        <div class="lab">Votre contrat</div>
+        <div class="big" id="cTot">—</div>
+        <div style="position:relative;color:var(--mute);font-size:14px">par mois, fourchette indicative TTC</div>
+        <ul class="lines" id="cLines"></ul>
+        <div class="credit" id="cCredit" style="display:none"></div>
+        <button class="btn pri" id="cSend" style="width:100%;position:relative">Je veux ce contrat</button>
+        <p class="note" style="position:relative">Prix moyens constatés en France en 2026, à titre indicatif. Le contrat est établi par KLB Paysage après visite.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="meteo" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="kick rv">Cette semaine à Caen</div>
+    <h2 class="rv">La météo du jardinier.</h2>
+    <p class="lead rv">Les prévisions des 7 prochains jours à Caen, et ce qu'il est bon de faire au jardin en ce moment.</p>
+    <div class="meteo">
+      <div><div class="days" id="days"></div><p class="note" id="mNote"></p></div>
+      <div class="tip" id="tip"></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="zone">
+  <div class="wrap zone">
+    <div>
+      <div class="kick rv">Zone d'intervention</div>
+      <h2 class="rv">Caen, et tout autour.</h2>
+      <p class="lead rv">Tapez votre commune pour vérifier qu'elle fait partie de la zone d'intervention.</p>
+      <div class="search"><input id="q" placeholder="Votre commune, ex. Ifs" aria-label="Votre commune" list="tl"><datalist id="tl"></datalist><button class="btn pri" id="go">Vérifier</button></div>
+      <div class="res" id="res" aria-live="polite"></div>
+      <div class="towns" id="towns"></div>
+    </div>
+    <div class="mapbox rv"><svg id="map" viewBox="0 0 600 650" role="img" aria-label="Carte des communes desservies autour de Caen"></svg></div>
+  </div>
+</section>
+
+<section class="band" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="kick rv">Comment ça se passe</div>
+    <h2 class="rv">Quatre étapes, zéro mauvaise surprise.</h2>
+    <div class="steps" id="steps"></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="kick rv">L'artisan</div>
+    <h2 class="rv">Jeune, à son compte, et à fond sur votre jardin.</h2>
+    <div class="two">
+      <div class="panel rv"><h3>Qui se cache derrière KLB ?</h3><p class="lead" style="margin-top:12px">KLB Paysage, c'est un jeune paysagiste qui vient de se lancer à son compte à Caen. Pas de sous-traitance, pas de commercial : c'est lui qui vient voir votre terrain, qui fait le devis et qui réalise le chantier.</p><p class="lead">[Prénom, formation et parcours de l'artisan à compléter]</p></div>
+      <div class="ph rv"><h3>Vos avis Google, ici</h3><p class="mute">Les premiers avis clients s'afficheront à cet emplacement dès les premiers chantiers terminés.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contact" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="kick rv">Contact</div>
+    <h2 class="rv">Parlons de votre extérieur.</h2>
+    <div class="contact">
+      <div class="info">
+        <a href="tel:+33600000000"><span class="ico" style="margin:0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d7a44" stroke-width="2"><path d="M5 3h4l2 5-3 2a12 12 0 006 6l2-3 5 2v4a2 2 0 01-2 2A18 18 0 013 5a2 2 0 012-2z"/></svg></span><span><small>Téléphone</small>06 XX XX XX XX</span></a>
+        <a href="mailto:contact@klb-paysage.fr"><span class="ico" style="margin:0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d7a44" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>E-mail</small>contact@klb-paysage.fr</span></a>
+        <div><span class="ico" style="margin:0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d7a44" stroke-width="2"><path d="M12 22s7-6 7-12a7 7 0 10-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><small>Secteur</small>Caen et agglomération</span></div>
+        <div><span class="ico" style="margin:0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d7a44" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><small>Horaires</small>[À compléter]</span></div>
+      </div>
+      <form class="panel" name="devis" method="POST" data-netlify="true" netlify-honeypot="site" action="merci.html" enctype="multipart/form-data" id="form">
+        <input type="hidden" name="form-name" value="devis">
+        <p class="hp"><label>Ne pas remplir <input name="site" tabindex="-1" autocomplete="off"></label></p>
+        <label class="f">Nom et prénom<input name="nom" required autocomplete="name"></label>
+        <label class="f">Téléphone<input name="telephone" type="tel" required autocomplete="tel"></label>
+        <label class="f">E-mail<input name="email" type="email" autocomplete="email"></label>
+        <label class="f">Commune<input name="commune" id="fCommune" autocomplete="address-level2"></label>
+        <label class="f full">Prestation souhaitée<select name="prestation" id="fPresta"><option>Création de jardin</option><option>Entretien</option><option>Aménagement (terrasse, allée, clôture)</option><option>Élagage / abattage</option><option>Plusieurs prestations</option></select></label>
+        <label class="f full">Votre projet<textarea name="message" id="fMsg" placeholder="Surface, ce que vous aimeriez, vos délais…"></textarea></label>
+        <div class="f full"><span>Photos de votre jardin <span style="color:var(--mute);font-weight:400">(facultatif, 3 maximum)</span></span>
+          <label class="drop" id="drop"><input type="file" id="pics" accept="image/*" multiple><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1d7a44" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="12" cy="12.5" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg><span><b>Ajouter des photos</b><small>Prises au téléphone, c'est parfait : KLB voit votre terrain avant de se déplacer.</small></span></label>
+          <div class="thumbs" id="thumbs"></div>
+          <input type="file" name="photo1" hidden><input type="file" name="photo2" hidden><input type="file" name="photo3" hidden>
+        </div>
+        <label class="f full rgpd"><input type="checkbox" required> J'accepte que mes informations soient utilisées pour être recontacté au sujet de ma demande. Elles ne sont ni revendues ni utilisées à d'autres fins. Voir la politique de confidentialité.</label>
+        <div class="ok" id="ok" role="status"></div>
+        <div class="f full"><button class="btn pri" type="submit">Envoyer ma demande de devis</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© KLB Paysage · Paysagiste à Caen</span><span><a href="#top">Mentions légales</a> · <a href="#top">Confidentialité</a></span><span><a href="../">Voir la version sombre</a> · Aperçu préparé par <a href="https://tremplin.online">Tremplin</a></span></div></footer>
+</main>
+
+<svg id="grow" viewBox="0 0 52 230" aria-hidden="true"></svg>
+<div class="callbar"><a class="btn sec" href="tel:+33600000000">Appeler</a><a class="btn pri" href="#estimation">Estimer</a></div>
+
+<script>
+{
+const SAP=true; /* KLB déclaré « services à la personne » ? À confirmer, sinon false */
+const $=s=>document.querySelector(s), RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fmt=n=>Math.round(n/10)*10, eur=n=>fmt(n).toLocaleString('fr-FR')+' €';
+
+/* nav */
+const nav=$('#nav'),links=$('#links'),bg=$('#burger');
+addEventListener('scroll',()=>nav.classList.toggle('on',scrollY>30),{passive:true});
+bg.addEventListener('click',()=>{const o=links.classList.toggle('open');bg.setAttribute('aria-expanded',o)});
+links.addEventListener('click',e=>{if(e.target.closest('a')){links.classList.remove('open');bg.setAttribute('aria-expanded',false)}});
+
+/* services */
+const IC={
+ crea:'<path d="M12 21V11M12 11c0-4 3-7 7-7 0 4-3 7-7 7zM12 14c0-3-2-5-5-5 0 3 2 5 5 5z"/>',
+ ent:'<path d="M4 20l9-9M13 11l3-3 4 4-3 3zM6 4c3 0 4 2 4 5M3 9h6"/>',
+ am:'<path d="M3 20h18M5 20V12h14v8M5 16h14M9 12V8h6v4"/>',
+ ela:'<path d="M12 22v-8M12 14l-5-4M12 14l5-4M7 10a5 5 0 1110 0"/><path d="M15 20l5-5"/>'};
+const S=[
+ ['crea','Création de jardins','Un terrain vide ou à repenser ? On imagine l’ensemble, puis on le réalise.',['Conception sur mesure','Pelouse, semis ou rouleaux','Massifs, haies et arbres','Arrosage']],
+ ['ent','Entretien','Un jardin net toute l’année, sans y passer vos week-ends.',['Tonte et désherbage','Taille de haies et arbustes','Débroussaillage','Ramassage des feuilles']],
+ ['am','Aménagements','Les éléments qui rendent un extérieur vraiment pratique.',['Terrasses','Allées et bordures','Clôtures','Murets']],
+ ['ela','Élagage & abattage','Des arbres sains, sûrs et qui laissent passer la lumière.',['Taille et élagage','Abattage','Dessouchage','Évacuation des déchets verts']]];
+$('#cards').innerHTML=S.map(([k,t,d,l])=>`<article class="card rv"><div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2f8a55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${IC[k]}</svg></div><h3>${t}</h3><p style="color:var(--mute);margin-top:10px;font-size:15px">${d}</p><ul>${l.map(x=>`<li>${x}</li>`).join('')}</ul>${k==='ent'&&SAP?'<span class="badge">Éligible au crédit d’impôt de 50 %</span>':''}</article>`).join('');
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}));
+
+/* steps */
+$('#steps').innerHTML=[['Vous appelez','Ou vous envoyez votre estimation depuis le site.'],['Visite & devis','KLB passe voir votre terrain et vous remet un devis détaillé.'],['Le chantier','Travaux réalisés proprement, déchets verts évacués.'],['Le suivi','Un entretien régulier si vous le souhaitez, pour que ça dure.']].map(([t,d],i)=>`<div class="step rv"><b>${String(i+1)}</b><h3>${t}</h3><p>${d}</p></div>`).join('');
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* saisons + herbe */
+const hero=$('.hero'),cv=$('#grass'),cx=cv.getContext('2d'),gb=$('.grassbox');let W=0,H=0,GH=0,bl=[],pt=[],m={x:-999,y:-999};
+const SEA={hiver:{n:'Hiver',h:[150,178],s:30,l:[24,58],p:'snow',c:70},printemps:{n:'Printemps',h:[92,128],s:85,l:[16,50],p:'petal',c:42},ete:{n:'Été',h:[118,148],s:80,l:[14,48],p:'fly',c:26},automne:{n:'Automne',h:[78,140],s:66,l:[16,46],p:'leaf',c:32}};
+const mo=new Date().getMonth(),AUTO=mo===11||mo<2?'hiver':mo<5?'printemps':mo<8?'ete':'automne';let sea=AUTO;
+const Rn=(a,b)=>a+Math.random()*(b-a);
+const mkP=top=>{const k=SEA[sea].p;return{x:Rn(0,W),y:top?Rn(-40,0):k==='fly'?Rn(H-GH*1.5,H-20):Rn(0,H),r:k==='snow'?Rn(1,3):Rn(3,6),vy:k==='snow'?Rn(.35,1):k==='fly'?Rn(-.2,.2):Rn(.5,1.2),vx:k==='fly'?Rn(-.3,.3):Rn(-.2,.6),ph:Rn(0,6.3),rot:Rn(0,6.3),vr:Rn(-.04,.04),col:k==='leaf'?['#e8833a','#d4552b','#f2b443','#b5651d'][Math.random()*4|0]:k==='petal'?['#ffc2d6','#fff0f5','#ffd7e6'][Math.random()*3|0]:'#ffffff'}};
+const size=()=>{const r=hero.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2),S=SEA[sea];W=r.width;H=r.height;GH=gb.offsetHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0);
+ bl=Array.from({length:Math.floor(W/3.2)},()=>{let hu=Rn(S.h[0],S.h[1]);if(sea==='automne'&&Math.random()<.28)hu=Rn(38,58);return{x:Rn(0,W),h:GH*Rn(.25,.85),w:Rn(1.2,3.8),ph:Rn(0,6.3),hu,l:Rn(S.l[0],S.l[1]),b:0}}).sort((a,b)=>a.l-b.l);
+ pt=Array.from({length:S.c},()=>mkP(false));if(RM)frame(0)};
+hero.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});hero.addEventListener('pointerleave',()=>{m.x=-999});
+const drawP=(p,t)=>{const k=SEA[sea].p;
+ if(k==='fly'){p.x+=p.vx;p.y+=p.vy;p.ph+=.03;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<H-GH*1.6||p.y>H-10)p.vy*=-1;const a=.35+.35*Math.sin(p.ph),g=cx.createRadialGradient(p.x,p.y,0,p.x,p.y,10);g.addColorStop(0,`rgba(170,255,190,${a})`);g.addColorStop(1,'rgba(53,240,126,0)');cx.fillStyle=g;cx.beginPath();cx.arc(p.x,p.y,10,0,7);cx.fill();return}
+ const dx=p.x-m.x,dy=p.y-m.y,dd=Math.hypot(dx,dy);if(dd>0&&dd<90){p.x+=dx/dd*2.2;p.y+=dy/dd}
+ p.y+=p.vy;p.x+=p.vx+Math.sin(t*.0012+p.ph)*.5;p.rot+=p.vr;if(p.y>H+10||p.x>W+20||p.x<-20)Object.assign(p,mkP(true));
+ cx.save();cx.translate(p.x,p.y);cx.rotate(p.rot);cx.fillStyle=p.col;cx.globalAlpha=k==='snow'?.75:.9;cx.beginPath();
+ if(k==='snow')cx.arc(0,0,p.r,0,7);else if(k==='petal')cx.ellipse(0,0,p.r,p.r*.6,0,0,7);else{cx.moveTo(-p.r*1.4,0);cx.quadraticCurveTo(0,-p.r,p.r*1.4,0);cx.quadraticCurveTo(0,p.r,-p.r*1.4,0)}
+ cx.fill();cx.restore()};
+function frame(t){cx.clearRect(0,0,W,H);const S=SEA[sea];
+ for(const p of pt)drawP(p,t);
+ for(const b of bl){const wind=Math.sin(t*.0011+b.x*.007+b.ph)*.14,dx=b.x-m.x,dy=H-b.h*.6-m.y,d=Math.hypot(dx,dy),k=d<150?1-d/150:0,push=k*(dx>0?1:-1)*.95;
+  b.b+=(wind+push-b.b)*.07;const tx=b.x+Math.sin(b.b)*b.h,ty=H-Math.cos(b.b)*b.h,mx=b.x+(tx-b.x)*.35,my=H-b.h*.55;
+  cx.fillStyle=`hsl(${b.hu} ${S.s}% ${b.l+k*35}%)`;cx.beginPath();cx.moveTo(b.x-b.w,H);cx.quadraticCurveTo(mx,my,tx,ty);cx.quadraticCurveTo(mx+b.w,my,b.x+b.w,H);cx.fill()}
+ if(!RM)requestAnimationFrame(frame)}
+const ro=new ResizeObserver(size);ro.observe(hero);
+if(!RM)requestAnimationFrame(frame);
+const SB=$('#seasons');
+SB.innerHTML=[['auto',`Auto · ${SEA[AUTO].n}`],['hiver','Hiver'],['printemps','Printemps'],['ete','Été'],['automne','Automne']].map(([k,l])=>`<button type="button" data-s="${k}" aria-pressed="${k==='auto'}">${l}</button>`).join('');
+SB.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;sea=b.dataset.s==='auto'?AUTO:b.dataset.s;SB.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));size()});
+
+/* réalisations */
+const WK=[['pelouse','Tonte et désherbage','Pelouse envahie, remise au propre'],['talus','Débroussaillage de talus','Talus dégagé jusqu’à la terre'],['haie','Taille de haie','Laurier taillé net, au carré']];
+$('#works').innerHTML=WK.map(([k,t,d])=>`<article class="work rv"><div class="ph2" style="--p:50%"><img class="av" src="../images/${k}-avant.webp" alt="${t}, avant intervention" loading="lazy" width="900" height="1200"><img class="ap" src="../images/${k}-apres.webp" alt="${t}, après intervention par KLB Paysage" loading="lazy" width="900" height="1200"><span class="tg" style="left:14px">Avant</span><span class="tg" style="right:14px;color:var(--g)">Après</span><input type="range" min="0" max="100" value="50" aria-label="${t} : faire glisser pour comparer avant et après"><div class="bar"></div><div class="knob" aria-hidden="true">⟷</div><div class="wcap"><h3>${t}</h3><p>${d}</p></div></div></article>`).join('');
+document.querySelectorAll('.work').forEach(w=>{const ph=w.querySelector('.ph2'),r=w.querySelector('input');r.addEventListener('input',()=>{w.dataset.touched=1;ph.style.setProperty('--p',r.value+'%')})});
+const sweep=w=>{const ph=w.querySelector('.ph2'),r=w.querySelector('input');let t0=null;const an=t=>{if(w.dataset.touched)return;t0??=t;const p=Math.min((t-t0)/1800,1),v=50+Math.sin(p*Math.PI*2)*30*(1-p);ph.style.setProperty('--p',v+'%');r.value=v;if(p<1)requestAnimationFrame(an)};requestAnimationFrame(an)};
+const wio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const w=e.target;wio.unobserve(w);if(!RM)setTimeout(()=>sweep(w),400+[...w.parentNode.children].indexOf(w)*300)}}),{threshold:.6});
+document.querySelectorAll('.work').forEach(w=>{wio.observe(w);io.observe(w)});
+
+/* simulator — fourchettes de marché 2026 à remplacer par les tarifs KLB */
+const P=[
+ {id:'crea',n:'Création de jardin',u:'m²',lo:20,hi:50,v:150,min:20,max:1500,st:10},
+ {id:'gaz',n:'Pelouse neuve',u:'m²',lo:3.5,hi:15,v:100,min:10,max:1500,st:10},
+ {id:'ent',n:'Remise en état / entretien',u:'m²',lo:2,hi:7,v:200,min:20,max:2000,st:10},
+ {id:'haie',n:'Taille de haies',u:'mètres',lo:4,hi:8,v:30,min:5,max:300,st:5},
+ {id:'ela',n:'Élagage',u:'arbre(s)',lo:200,hi:1000,v:1,min:1,max:15,st:1},
+ {id:'am',n:'Terrasse, allée ou clôture',u:null}];
+const st={};P.forEach(p=>st[p.id]={on:false,v:p.v});
+$('#opts').innerHTML=P.map(p=>`<div class="opt" id="o-${p.id}"><label class="t"><input type="checkbox" data-id="${p.id}"> ${p.n}</label><div class="sub">${p.u?`<div class="row"><span>Quantité</span><b id="v-${p.id}">${p.v} ${p.u}</b></div><input class="r" type="range" min="${p.min}" max="${p.max}" step="${p.st}" value="${p.v}" data-r="${p.id}" aria-label="${p.n} : quantité en ${p.u}">`:`<div class="row"><span>Chiffré lors de la visite, selon les matériaux choisis.</span></div>`}</div></div>`).join('');
+let shown=0;
+const ELIG=['ent','haie'],CAP=5000,eur1=n=>Math.round(n).toLocaleString('fr-FR')+'\u00a0€';
+const calc=()=>{let lo=0,hi=0,eLo=0,eHi=0,L=[];P.forEach(p=>{const s=st[p.id];if(!s.on)return;if(!p.u){L.push([p.n,'sur devis']);return}const a=p.lo*s.v,b=p.hi*s.v;lo+=a;hi+=b;if(ELIG.includes(p.id)){eLo+=a;eHi+=b}L.push([`${p.n} · ${s.v} ${p.u}`,`${eur(a)} – ${eur(b)}`])});
+ $('#lines').innerHTML=L.map(([a,b])=>`<li><span>${a}</span><span>${b}</span></li>`).join('');
+ const T=$('#total'),SC=$('#sCredit');SC.style.display='none';if(!L.length){T.textContent='—';$('#totSub').textContent='Cochez au moins une prestation.';return}
+ if(!hi){T.textContent='Sur devis';$('#totSub').textContent='Ces travaux sont chiffrés après visite.';return}
+ $('#totSub').textContent=L.some(l=>l[1]==='sur devis')?'+ aménagements chiffrés sur devis':'Fourchette indicative TTC';
+ if(SAP&&eHi){SC.style.display='block';SC.innerHTML=`Après crédit d’impôt de 50 % sur l’entretien et les haies : <b>${eur(lo-.5*Math.min(eLo,CAP))} – ${eur(hi-.5*Math.min(eHi,CAP))}</b><small>Création, pelouse neuve et élagage n’y ouvrent pas droit.</small>`}
+ const from=shown,to=lo,t0=performance.now();const an=t=>{const k=RM?1:Math.min((t-t0)/500,1),e=1-(1-k)**3;T.innerHTML=`<span>${eur(from+(to-from)*e)}</span> – <span>${eur(hi)}</span>`;if(k<1)requestAnimationFrame(an);else shown=to};requestAnimationFrame(an)};
+$('#opts').addEventListener('change',e=>{const id=e.target.dataset.id;if(!id)return;st[id].on=e.target.checked;$('#o-'+id).classList.toggle('on',e.target.checked);calc()});
+$('#opts').addEventListener('input',e=>{const id=e.target.dataset.r;if(!id)return;const p=P.find(x=>x.id===id);st[id].v=+e.target.value;$('#v-'+id).textContent=`${e.target.value} ${p.u}`;calc()});
+const first=document.querySelector('[data-id=crea]');first.checked=true;st.crea.on=true;$('#o-crea').classList.add('on');calc();
+$('#send').addEventListener('click',()=>{const L=[...document.querySelectorAll('#lines li')].map(li=>'• '+li.textContent.replace(/\s+/g,' ').trim());const on=P.filter(p=>st[p.id].on);
+ $('#fPresta').value=on.length>1?'Plusieurs prestations':({crea:'Création de jardin',gaz:'Création de jardin',ent:'Entretien',haie:'Entretien',ela:'Élagage / abattage',am:'Aménagement (terrasse, allée, clôture)'}[on[0]?.id]||'Création de jardin');
+ $('#fMsg').value=L.length?'Mon estimation en ligne :\n'+L.join('\n')+'\nTotal estimé : '+$('#total').textContent+'\n\n':'';$('#contact').scrollIntoView({behavior:RM?'auto':'smooth'});setTimeout(()=>document.querySelector('[name=nom]').focus({preventScroll:true}),700)});
+
+/* contrat d'entretien — tonte 0,15–0,5 €/m²/passage, haies 4–8 €/m par taille (moyennes 2026) */
+const CF=[['s','Surface de pelouse','m²',50,2000,10,300],['n','Tontes par an','passages',6,24,1,14],['h','Longueur de haies','mètres',0,200,5,30],['k','Tailles de haies par an','fois',1,3,1,2]];
+const cs={};CF.forEach(c=>cs[c[0]]=c[6]);
+$('#ctr').innerHTML=CF.map(([id,l,u,mn,mx,sp,v])=>`<div class="cf"><div class="row"><span>${l}</span><b id="cv-${id}">${v} ${u}</b></div><input class="r" type="range" min="${mn}" max="${mx}" step="${sp}" value="${v}" data-c="${id}" aria-label="${l} (${u})"></div>`).join('');
+let cTxt='';
+const ccalc=()=>{const{s:S2,n,h,k}=cs,tl=S2*n*.15,th=S2*n*.5,hl=h*k*4,hh=h*k*8,A=tl+hl,B=th+hh;
+ const L=[[`Tonte · ${n} × ${S2} m²`,`${eur(tl)} – ${eur(th)} / an`]];if(h)L.push([`Haies · ${k} × ${h} m`,`${eur(hl)} – ${eur(hh)} / an`]);L.push(['Total sur l’année',`${eur(A)} – ${eur(B)}`]);
+ $('#cLines').innerHTML=L.map(([a,b])=>`<li><span>${a}</span><span>${b}</span></li>`).join('');
+ $('#cTot').innerHTML=`<span>${eur1(A/12)}</span> – <span>${eur1(B/12)}</span>`;
+ const C2=$('#cCredit');if(SAP){const a2=A-.5*Math.min(A,CAP),b2=B-.5*Math.min(B,CAP);C2.style.display='block';C2.innerHTML=`Après crédit d’impôt de 50 % : <b>${eur1(a2/12)} – ${eur1(b2/12)} / mois</b><small>Petits travaux de jardinage : 50 % des dépenses, dans la limite de 5 000 € de dépenses par an et par foyer.</small>`}
+ cTxt=`Je suis intéressé(e) par un contrat d’entretien :\n• Pelouse ${S2} m², ${n} tontes par an\n• Haies ${h} m, ${k} taille(s) par an\nEstimation en ligne : ${$('#cTot').textContent} par mois\n\n`};
+$('#ctr').addEventListener('input',e=>{const id=e.target.dataset.c;if(!id)return;cs[id]=+e.target.value;const c=CF.find(x=>x[0]===id);$('#cv-'+id).textContent=`${e.target.value} ${c[2]}`;ccalc()});
+ccalc();
+$('#cSend').addEventListener('click',()=>{$('#fPresta').value='Entretien';$('#fMsg').value=cTxt;$('#contact').scrollIntoView({behavior:RM?'auto':'smooth'});setTimeout(()=>document.querySelector('[name=nom]').focus({preventScroll:true}),700)});
+
+/* météo du jardinier — Open-Meteo, Caen */
+const ADV={hiver:['Saison de plantation des haies, arbres et arbustes, en dehors des jours de gel.','Bon moment pour élaguer et tailler les arbres, au repos pendant l’hiver.','On évite de marcher sur une pelouse gelée.'],
+ printemps:['Reprise de la tonte dès que l’herbe repousse.','Bon moment pour semer ou regarnir la pelouse.','Désherbage avant que les indésirables ne montent en graines.'],
+ ete:['Tondre un peu plus haut pour mieux résister à la chaleur.','Arroser le soir ou tôt le matin.','Taille des haies en fin d’été, une fois la période de nidification passée.'],
+ automne:['Le meilleur moment pour semer ou regarnir une pelouse.','Ramasser les feuilles pour ne pas étouffer le gazon.','Début de la saison de plantation des haies et des arbres.']};
+$('#tip').innerHTML=`<h3>En ce moment au jardin</h3><ul class="tl">${ADV[AUTO].map(x=>`<li>${x}</li>`).join('')}</ul><p id="wx"></p><a class="btn pri" href="#contact">Planifier une intervention</a>`;
+const CL='<path d="M9 22h16a6 6 0 000-12 8 8 0 00-15-1 6 6 0 00-1 13z" fill="#9db0a3"/>';
+const ICO={sun:'<circle cx="17" cy="17" r="7" fill="#ffd25e"/><path d="M17 3v4M17 27v4M3 17h4M27 17h4M7 7l3 3M24 24l3 3M7 27l3-3M24 10l3-3" stroke="#ffd25e" stroke-width="2" stroke-linecap="round"/>',
+ part:'<circle cx="12" cy="11" r="6" fill="#ffd25e"/>'+CL,cloud:CL,rain:CL+'<path d="M12 26l-2 5M18 26l-2 5M24 26l-2 5" stroke="#7cc7ff" stroke-width="2" stroke-linecap="round"/>',
+ snow:CL+'<g fill="#fff"><circle cx="11" cy="28" r="1.6"/><circle cx="17" cy="31" r="1.6"/><circle cx="23" cy="28" r="1.6"/></g>',storm:CL+'<path d="M18 23l-4 6h4l-2 5 6-8h-4l2-3z" fill="#ffd25e"/>'};
+const WMO=c=>c===0?'sun':c<=2?'part':c<=48?'cloud':(c>=71&&c<=77)||c===85||c===86?'snow':c>=95?'storm':'rain';
+const dn=(t,i)=>i===0?'Auj.':new Date(t+'T12:00').toLocaleDateString('fr-FR',{weekday:'short'}).replace('.','');
+fetch('https://api.open-meteo.com/v1/forecast?latitude=49.18&longitude=-0.37&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&timezone=Europe%2FParis&forecast_days=7')
+ .then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{const D=d.daily,wc=D.weather_code||D.weathercode;
+  const days=D.time.map((t,i)=>({n:dn(t,i),c:+wc[i],mx:+D.temperature_2m_max[i],mn:+D.temperature_2m_min[i],r:+(D.precipitation_sum[i]||0),pp:+((D.precipitation_probability_max||[])[i]||0)}));
+  days.forEach(x=>x.dry=x.r<1&&x.pp<50);
+  $('#days').innerHTML=days.map(x=>`<div class="day${x.dry?' dry':''}"><small>${x.n}</small><svg width="34" height="36" viewBox="0 0 34 36" aria-hidden="true">${ICO[WMO(x.c)]}</svg><b>${Math.round(x.mx)}°</b><small>${Math.round(x.mn)}°</small><span class="rain">${x.r>=.1?x.r.toFixed(1).replace('.',',')+' mm':'sec'}</span></div>`).join('');
+  const dry=days.filter(x=>x.dry).map(x=>x.n),fr=days.find(x=>x.mn<=0);
+  let w=dry.length?`Jours secs prévus : ${dry.join(', ')}. Idéal pour intervenir.`:'Semaine humide : place aux travaux qui ne craignent pas la pluie.';
+  if(fr)w+=` Gel annoncé (${fr.n}) : pas de plantation ce jour-là.`;
+  $('#wx').textContent=w;$('#mNote').innerHTML='Prévisions <a href="https://open-meteo.com/">Open-Meteo</a>, mises à jour automatiquement.'})
+ .catch(()=>{$('#days').style.display='none';$('.meteo').style.gridTemplateColumns='minmax(0,1fr)';$('#mNote').textContent='Les prévisions en direct de Caen s’affichent ici sur le site en ligne.'});
+
+/* photos du jardin — compressées avant envoi (limite Netlify : 8 Mo par envoi) */
+const pics=[];
+const shrink=f=>new Promise(res=>{const u=URL.createObjectURL(f),im=new Image();im.onload=()=>{const k=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);c.toBlob(b=>{URL.revokeObjectURL(u);res(b?new File([b],(f.name.replace(/\.[^.]+$/,'')||'photo')+'.jpg',{type:'image/jpeg'}):null)},'image/jpeg',.78)};im.onerror=()=>{URL.revokeObjectURL(u);res(f.size<2.5e6?f:null)};im.src=u});
+const thumbs=()=>{$('#thumbs').innerHTML=pics.map((p,i)=>`<div class="th"><img src="${URL.createObjectURL(p)}" alt="Photo ${i+1}"><button type="button" data-i="${i}" aria-label="Retirer la photo ${i+1}">×</button></div>`).join('')};
+const addPics=async fl=>{for(const f of [...fl]){if(pics.length>=3)break;if(!/^image\//.test(f.type)&&!/\.(heic|heif)$/i.test(f.name))continue;const c=await shrink(f);if(c)pics.push(c)}thumbs()};
+$('#pics').addEventListener('change',e=>{addPics(e.target.files);e.target.value=''});
+$('#thumbs').addEventListener('click',e=>{const b=e.target.closest('button');if(b){pics.splice(+b.dataset.i,1);thumbs()}});
+const dp=$('#drop');['dragenter','dragover'].forEach(v=>dp.addEventListener(v,e=>{e.preventDefault();dp.classList.add('over')}));['dragleave','drop'].forEach(v=>dp.addEventListener(v,()=>dp.classList.remove('over')));
+dp.addEventListener('drop',e=>{e.preventDefault();addPics(e.dataTransfer.files)});
+
+/* jardin qui pousse avec le défilement */
+const GR=$('#grow');GR.innerHTML='<ellipse cx="26" cy="224" rx="22" ry="5" fill="#2a1d12"/><path id="stem" d="M26 222C18 182 34 152 26 112S18 52 26 24" fill="none" stroke="#1d7a44" stroke-width="3" stroke-linecap="round"/><g id="lv"></g><g id="bloom" transform="translate(26 22) scale(0)"><circle r="12" fill="#35f07e" opacity=".22"/><circle r="6.5" fill="#35f07e"/><circle r="2.6" fill="#eaffd0"/></g>';
+const stem=$('#stem');let SLn=200;try{SLn=stem.getTotalLength()}catch(e){}stem.style.strokeDasharray=SLn;
+const LT=[.2,.34,.48,.62,.76];
+$('#lv').innerHTML=LT.map((t,i)=>{let q={x:26,y:222-200*t};try{q=stem.getPointAtLength(SLn*t)}catch(e){}return `<g transform="translate(${q.x.toFixed(1)} ${q.y.toFixed(1)}) rotate(${i%2?-35:215})"><path data-t="${t}" d="M0 0C6-9 16-8 20 0C13 5 5 5 0 0Z" fill="${i%2?'#2bb15c':'#1c8a4a'}" transform="scale(0)"/></g>`}).join('');
+const prog=$('#prog'),bloom=$('#bloom');let tk=0;
+const grow=()=>{tk=0;const p=Math.min(1,Math.max(0,scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)));prog.style.width=(p*100).toFixed(2)+'%';stem.style.strokeDashoffset=SLn*(1-p);
+ GR.querySelectorAll('#lv path').forEach(l=>{const s2=Math.min(1,Math.max(0,(p-l.dataset.t)/.08));l.setAttribute('transform',`scale(${s2.toFixed(2)})`)});
+ bloom.setAttribute('transform',`translate(26 22) scale(${Math.min(1,Math.max(0,(p-.92)/.08)).toFixed(2)})`)};
+addEventListener('scroll',()=>{if(!tk){tk=1;requestAnimationFrame(grow)}},{passive:true});grow();
+
+/* map — communes à confirmer avec KLB */
+const C=[['Caen',49.182,-0.370,1],['Hérouville-Saint-Clair',49.204,-0.330],['Mondeville',49.175,-0.322],['Ifs',49.140,-0.350],['Cormelles-le-Royal',49.153,-0.327],['Fleury-sur-Orne',49.150,-0.375],['Louvigny',49.158,-0.395],['Bretteville-sur-Odon',49.166,-0.420],['Verson',49.153,-0.455],['Saint-Contest',49.212,-0.403],['Épron',49.218,-0.367],['Colombelles',49.200,-0.298],['Giberville',49.179,-0.287],['Blainville-sur-Orne',49.229,-0.300],['Ouistreham',49.277,-0.258],['Douvres-la-Délivrande',49.287,-0.380]];
+const X=lo=>(lo+.48)*.656*3800,Y=la=>(49.30-la)*3800,cX=X(-.370),cY=Y(49.182),km=3800/111;
+const orne=[[-.40,49.13],[-.385,49.165],[-.37,49.178],[-.345,49.185],[-.31,49.197],[-.29,49.225],[-.27,49.255],[-.255,49.285]].map(([o,a])=>`${X(o).toFixed(0)},${Y(a).toFixed(0)}`).join(' L');
+const nrm=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z]/g,'');
+$('#map').innerHTML=`<defs><radialGradient id="mg"><stop offset="0" stop-color="#35f07e" stop-opacity=".22"/><stop offset="1" stop-color="#35f07e" stop-opacity="0"/></radialGradient></defs>
+<path d="M0 0H600V22Q450 34 300 28T0 30Z" fill="#d6e6ee"/><text x="20" y="18" fill="#5d7f96" font-size="13" font-family="Manrope">Manche</text>
+<circle cx="${cX}" cy="${cY}" r="${10*km}" fill="url(#mg)"/>
+${[5,10].map(k=>`<circle cx="${cX}" cy="${cY}" r="${k*km}" fill="none" stroke="#c4d3c6" stroke-dasharray="4 6"/><text x="${cX+k*km*.71+4}" y="${cY+k*km*.71+14}" fill="#4d6b58" font-size="12" font-family="Manrope">${k} km</text>`).join('')}
+<path d="M${orne}" fill="none" stroke="#8dbcd6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+${C.map(([n,a,o,big],i)=>{const x=X(o),y=Y(a)+({Colombelles:14,Mondeville:6,Giberville:-4}[n]||0),left=x>500;return `<g class="town" data-i="${i}"><line x1="${cX}" y1="${cY}" x2="${x}" y2="${Y(a)}" stroke="#1d7a44" stroke-opacity=".12"/><circle class="pulse" cx="${x}" cy="${Y(a)}" r="7"/><circle class="dot" cx="${x}" cy="${Y(a)}" r="${big?9:5}"/><text x="${left?x-10:x+10}" y="${y+5}" text-anchor="${left?'end':'start'}" ${big?'style="font-size:19px;font-weight:800;fill:#15231a"':''}>${n}</text></g>`}).join('')}`;
+$('#towns').innerHTML=C.map(([n],i)=>`<button type="button" data-i="${i}">${n}</button>`).join('');
+$('#tl').innerHTML=C.map(([n])=>`<option value="${n}">`).join('');
+const hit=i=>{document.querySelectorAll('.town,.towns button').forEach(el=>el.classList.toggle('hit',+el.dataset.i===i))};
+const check=()=>{const v=nrm($('#q').value);if(!v){$('#res').textContent='';hit(-1);return}const i=C.findIndex(c=>nrm(c[0]).startsWith(v)||v.startsWith(nrm(c[0])));
+ if(i>=0){hit(i);$('#res').innerHTML=`<span style="color:var(--gt)">Oui, KLB Paysage intervient à ${C[i][0]}.</span>`;$('#fCommune').value=C[i][0]}else{hit(-1);$('#res').textContent='Commune pas dans la liste ? Appelez : KLB vous dira tout de suite s’il peut venir.'}};
+$('#go').addEventListener('click',check);$('#q').addEventListener('keydown',e=>{if(e.key==='Enter')check()});
+$('#towns').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$('#q').value=C[+b.dataset.i][0];check()});
+document.querySelectorAll('.town').forEach(g=>g.addEventListener('click',()=>{$('#q').value=C[+g.dataset.i][0];check()}));
+
+/* form — Netlify Forms en ligne, message de démo ailleurs */
+$('#form').addEventListener('submit',e=>{e.preventDefault();const f=e.target,ok=$('#ok');
+ const fd=new FormData(f);['photo1','photo2','photo3'].forEach(n=>fd.delete(n));pics.forEach((p,i)=>fd.append('photo'+(i+1),p,p.name));
+ fetch('/',{method:'POST',body:fd})
+ .then(r=>{if(!r.ok)throw 0;location.href='merci.html'})
+ .catch(()=>{ok.style.display='block';ok.textContent='Démonstration : sur le site en ligne, cette demande'+(pics.length?` et vos ${pics.length} photo(s)`:'')+' arriveront directement dans la boîte mail de KLB Paysage.'})});
+}
+</script>
+</body>
+</html>
