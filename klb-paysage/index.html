@@ -74,14 +74,21 @@ nav.on{background:rgba(5,8,6,.82);backdrop-filter:blur(14px);border-color:var(--
 .card ul{margin:14px 0 0;padding:0;list-style:none;color:var(--mute);font-size:15px}
 .card li{padding:5px 0 5px 20px;position:relative}
 .card li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:2px;background:var(--g)}
-/* before/after */
-.ba{position:relative;margin-top:40px;border-radius:26px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;max-height:640px;width:100%;touch-action:pan-y;user-select:none;background:#111}
-.ba svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-.ba .after{clip-path:inset(0 0 0 var(--p,50%))}
-.ba .bar{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;background:var(--g);box-shadow:0 0 18px var(--g);pointer-events:none}
-.ba .knob{position:absolute;top:50%;left:var(--p,50%);width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:var(--g);display:grid;place-items:center;color:#03140a;font-weight:800;box-shadow:0 0 30px rgba(53,240,126,.6);pointer-events:none}
-.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
-.tag{position:absolute;top:16px;padding:6px 14px;border-radius:999px;background:rgba(5,8,6,.7);font-weight:700;font-size:14px;pointer-events:none}
+/* réalisations */
+.works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:44px}
+@media(max-width:1000px){.works{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.works{grid-template-columns:minmax(0,1fr)}}
+.work{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.ph2{position:relative;aspect-ratio:3/4;background:#0a110d;overflow:hidden}
+.ph2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .7s ease,transform 6s ease}
+.ph2 img.ap{opacity:0}.work.after .ph2 img.ap{opacity:1}.work.after .ph2 img.av{opacity:0}
+.work:hover .ph2 img{transform:scale(1.04)}
+.ph2::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,rgba(5,8,6,.85));pointer-events:none}
+.seg{position:absolute;top:14px;left:14px;z-index:2;display:flex;padding:4px;border-radius:999px;background:rgba(5,8,6,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08)}
+.seg button{border:0;background:transparent;color:var(--mute);font:700 14px Manrope,sans-serif;padding:0 16px;min-height:38px;border-radius:999px;cursor:pointer;transition:background .3s,color .3s}
+.seg button[aria-pressed=true]{background:var(--g);color:#03140a}
+.wcap{position:absolute;left:18px;right:18px;bottom:16px;z-index:2}
+.wcap h3{font-size:20px}.wcap p{color:var(--mute);font-size:14px;margin-top:4px}
 .note{font-size:13px;color:var(--mute);margin-top:12px}
 /* simulator */
 .sim{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;margin-top:44px;align-items:start}
@@ -167,7 +174,7 @@ footer a{color:var(--mute)}
     <span>KLB Paysage<small>Paysagiste · Caen</small></span>
   </a>
   <div class="links" id="links">
-    <a href="#prestations">Prestations</a><a href="#avant-apres">Avant / après</a><a href="#estimation">Estimation</a><a href="#zone">Zone</a><a href="#contact">Contact</a>
+    <a href="#prestations">Prestations</a><a href="#avant-apres">Réalisations</a><a href="#estimation">Estimation</a><a href="#zone">Zone</a><a href="#contact">Contact</a>
     <a class="btn pri" href="#estimation" style="color:#03140a">Estimer mon projet</a>
   </div>
   <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="links">
@@ -200,48 +207,10 @@ footer a{color:var(--mute)}
 
 <section class="band" id="avant-apres">
   <div class="wrap">
-    <div class="kick rv">Avant / après</div>
-    <h2 class="rv">Faites glisser. Voyez la différence.</h2>
-    <div class="ba rv" id="ba" style="--p:50%">
-      <svg class="before" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs><linearGradient id="bs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b2b26"/><stop offset="1" stop-color="#45412f"/></linearGradient></defs>
-        <rect width="800" height="450" fill="url(#bs)"/>
-        <circle cx="650" cy="80" r="40" fill="#bdb9a3" opacity=".12"/>
-        <g fill="#5a5547" id="fence"></g>
-        <path d="M0 270Q400 245 800 270V450H0Z" fill="#5b4632"/>
-        <path d="M60 330q90-20 170 6t140 0q60-14 120 10t210-6V450H60Z" fill="#4a3a29"/>
-        <ellipse cx="560" cy="380" rx="120" ry="26" fill="#6d5a40"/>
-        <g id="weeds" stroke-linecap="round"></g>
-        <rect x="636" y="262" width="34" height="34" rx="4" fill="#3b2f22"/><ellipse cx="653" cy="262" rx="17" ry="6" fill="#6b5640"/>
-        <g fill="#77705f"><path d="M180 400l30-14 26 8 6 20-40 6z"/><path d="M250 420l22-10 18 8-4 16-30 2z"/><path d="M420 410l26-6 14 14-30 10z"/></g>
-      </svg>
-      <svg class="after" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="as" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#061510"/><stop offset="1" stop-color="#11402a"/></linearGradient>
-          <linearGradient id="al" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c7a40"/><stop offset="1" stop-color="#2bb15c"/></linearGradient>
-          <radialGradient id="lg"><stop offset="0" stop-color="#eaffc8" stop-opacity=".75"/><stop offset="1" stop-color="#eaffc8" stop-opacity="0"/></radialGradient>
-        </defs>
-        <rect width="800" height="450" fill="url(#as)"/>
-        <circle cx="90" cy="70" r="34" fill="#e9ffe9" opacity=".14"/>
-        <g fill="#0c3020"><circle cx="40" cy="225" r="50"/><circle cx="120" cy="215" r="58"/><circle cx="230" cy="228" r="48"/><circle cx="330" cy="218" r="56"/><circle cx="440" cy="226" r="50"/><circle cx="540" cy="216" r="56"/><circle cx="760" cy="222" r="56"/></g>
-        <rect x="0" y="226" width="800" height="50" fill="#145230"/>
-        <path d="M0 270Q400 245 800 270V450H0Z" fill="url(#al)"/>
-        <ellipse cx="160" cy="300" rx="120" ry="22" fill="#0f3d24"/>
-        <g id="flowers"></g>
-        <g fill="#c9d6cc"><ellipse cx="440" cy="436" rx="46" ry="12"/><ellipse cx="452" cy="398" rx="38" ry="10"/><ellipse cx="461" cy="366" rx="31" ry="8.5"/><ellipse cx="467" cy="340" rx="25" ry="7"/><ellipse cx="471" cy="319" rx="20" ry="6"/><ellipse cx="474" cy="302" rx="16" ry="5"/></g>
-        <path d="M0 360L250 352L300 450H0Z" fill="#6b4a2e"/>
-        <g stroke="#4a321e" stroke-width="2"><path d="M0 380L262 372M0 402L274 394M0 424L286 416"/></g>
-        <rect x="640" y="168" width="16" height="118" fill="#3b2a1c"/>
-        <g fill="#1d6b3c"><circle cx="648" cy="160" r="66"/><circle cx="604" cy="190" r="42"/><circle cx="694" cy="190" r="46"/></g>
-        <g fill="#2a8a4d" opacity=".7"><circle cx="630" cy="140" r="26"/><circle cx="676" cy="170" r="20"/></g>
-        <g fill="#1a5c35"><circle cx="330" cy="282" r="22"/><circle cx="566" cy="288" r="26"/><circle cx="768" cy="292" r="32"/></g>
-        <g id="lights"></g>
-      </svg>
-      <div class="bar"></div><div class="knob" aria-hidden="true">⟷</div>
-      <span class="tag" style="left:16px">Avant</span><span class="tag" style="right:16px;color:var(--g)">Après</span>
-      <input type="range" min="0" max="100" value="50" id="baR" aria-label="Comparer avant et après">
-    </div>
-    <p class="note">Illustration de démonstration. Les photos des chantiers KLB Paysage prendront cette place.</p>
+    <div class="kick rv">Réalisations</div>
+    <h2 class="rv">Avant, après. Les chantiers parlent.</h2>
+    <p class="lead rv">Des chantiers réalisés par KLB Paysage. Touchez « Avant » ou « Après » pour comparer.</p>
+    <div class="works" id="works"></div>
   </div>
 </section>
 
@@ -377,17 +346,13 @@ const frame=t=>{cx.clearRect(0,0,W,H);
  if(!RM)requestAnimationFrame(frame)};
 requestAnimationFrame(frame);
 
-/* before / after scene details */
-const ns='http://www.w3.org/2000/svg';
-let w='';for(let i=0;i<140;i++){const x=Math.random()*800,y=275+Math.random()*175,h=14+Math.random()*44,c=['#6f7a3a','#8a8a45','#5d6a33','#9a8f55'][i%4];w+=`<path d="M${x} ${y}q${(Math.random()-.5)*16} ${-h/2} ${(Math.random()-.5)*26} ${-h}" stroke="${c}" stroke-width="${1.5+Math.random()*2}" fill="none"/>`}
-$('#weeds').innerHTML=w;
-let fe='';for(let i=0;i<14;i++){const x=20+i*58,r=(i%3-1)*8+(i===5?24:0),h=i===9?30:60;fe+=`<rect x="${x}" y="${270-h}" width="9" height="${h}" transform="rotate(${r} ${x} 270)"/>`}
-fe+='<path d="M20 228L300 236M420 232L780 226" stroke="#5a5547" stroke-width="4"/>';$('#fence').innerHTML=fe;
-let fl='';for(let i=0;i<46;i++){const a=Math.random()*6.3,rr=Math.sqrt(Math.random());fl+=`<circle cx="${160+Math.cos(a)*112*rr}" cy="${296+Math.sin(a)*18*rr}" r="${2.5+Math.random()*3}" fill="${['#ff7aa8','#ffd25e','#ffffff','#b892ff'][i%4]}"/>`}
-$('#flowers').innerHTML=fl;
-$('#lights').innerHTML=[[388,404],[540,392],[300,340],[600,330]].map(([x,y])=>`<circle cx="${x}" cy="${y-18}" r="46" fill="url(#lg)"/><rect x="${x-2}" y="${y-18}" width="4" height="22" fill="#2a2a2a"/><circle cx="${x}" cy="${y-20}" r="5" fill="#f4ffd9"/>`).join('');
-const ba=$('#ba'),baR=$('#baR');baR.addEventListener('input',()=>ba.style.setProperty('--p',baR.value+'%'));
-if(!RM){let s=0;const intro=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!s){s=1;let t0=null;const an=t=>{t0??=t;const p=Math.min((t-t0)/1600,1),v=50+Math.sin(p*Math.PI*2)*28*(1-p);ba.style.setProperty('--p',v+'%');baR.value=v;if(p<1)requestAnimationFrame(an)};requestAnimationFrame(an)}},{threshold:.5});intro.observe(ba)}
+/* réalisations */
+const WK=[['pelouse','Tonte et désherbage','Pelouse envahie, remise au propre'],['talus','Débroussaillage de talus','Talus dégagé jusqu’à la terre'],['haie','Taille de haie','Laurier taillé net, au carré']];
+$('#works').innerHTML=WK.map(([k,t,d])=>`<article class="work rv" data-k="${k}"><div class="ph2"><img class="av" src="images/${k}-avant.webp" alt="${t}, avant intervention" loading="lazy" width="900" height="1200"><img class="ap" src="images/${k}-apres.webp" alt="${t}, après intervention par KLB Paysage" loading="lazy" width="900" height="1200"><div class="seg" role="group" aria-label="Comparer"><button type="button" aria-pressed="true" data-v="0">Avant</button><button type="button" aria-pressed="false" data-v="1">Après</button></div><div class="wcap"><h3>${t}</h3><p>${d}</p></div></div></article>`).join('');
+const setW=(w,v)=>{w.classList.toggle('after',!!v);w.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.v===v)))};
+document.querySelectorAll('.work').forEach(w=>{w.querySelector('.seg').addEventListener('click',e=>{const b=e.target.closest('button');if(b){w.dataset.touched=1;setW(w,+b.dataset.v)}})});
+const wio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const w=e.target;wio.unobserve(w);if(!RM)setTimeout(()=>{if(!w.dataset.touched)setW(w,1)},1200+[...w.parentNode.children].indexOf(w)*350)}}),{threshold:.6});
+document.querySelectorAll('.work').forEach(w=>{wio.observe(w);io.observe(w)});
 
 /* simulator — fourchettes de marché 2026 à remplacer par les tarifs KLB */
 const P=[
